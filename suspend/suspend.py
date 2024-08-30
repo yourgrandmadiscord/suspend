@@ -19,6 +19,9 @@ class SuspendThread(commands.Cog):
         thread = await self.db.find_one({'thread_id': str(ctx.thread.channel.id)})
         if thread:
             await self.db.delete_one({'thread_id': str(ctx.thread.channel.id)})
+            await ctx.send('lmao tom is an L.')
+        await ctx.send('fr')
+
 
 async def setup(bot):
     await bot.add_cog(SuspendThread(bot))
