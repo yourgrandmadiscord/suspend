@@ -17,7 +17,7 @@ class SuspendThread(commands.Cog):
     @commands.command()
     async def suspend(self, ctx):
         thread = await self.db.find_one({'thread_id': str(ctx.thread.channel.id)})
-        await self.db.delete_one({'thread_id': str(ctx.thread.channel.id)})
+        await self.db.delete_one(thread)
         await ctx.send('lmao tom is an L.')
         await ctx.send('fr')
 
